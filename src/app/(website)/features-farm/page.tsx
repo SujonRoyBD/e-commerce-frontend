@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa6";
+
 
 interface FarmData {
   id: string;
@@ -80,10 +82,12 @@ const Features = () => {
                 <p>(127)</p>
             </div>
           </div>
+         <Link href={`/farm/${item.id}`}>
          <div className="flex gap-3">
            <button className="font-bold text-green-500">View farms</button>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
          </div>
+         </Link>
         </div>
       ))}
      </div>
