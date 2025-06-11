@@ -116,7 +116,7 @@ const Features2 = () => {
         <div key={item.id}>
           <div> 
             <div className="relative">
-              <div className="bg-white p-4 right-2 top-2  rounded-full absolute">
+              <div className="bg-white p-2 right-2 top-2  rounded-full absolute">
                <FaRegComment/>
               </div>
               <div>

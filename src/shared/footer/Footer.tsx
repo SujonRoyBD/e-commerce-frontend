@@ -34,7 +34,7 @@ const Footer = () => {
                 <div>
                     <button className="font-bold py-[24px]">Contact Us</button>
                     <div className='py-[1px]'>
-                    <p>123 Organic Way</p>
+                    <p>123 Organi Way</p>
                     <p>Farmville, CA 90210</p>
                     </div>
                      <div className='py-[1px]'>
