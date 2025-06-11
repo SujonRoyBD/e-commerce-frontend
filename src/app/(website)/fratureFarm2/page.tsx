@@ -1,5 +1,4 @@
 
-import { Pagination } from '@/components/ui/pagination';
 import Image from 'next/image';
 import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
@@ -146,11 +145,6 @@ const Features2 = () => {
          <div className="flex gap-3">
            <button className="font-bold text-green-500">View farms</button>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
-         </div>
-         <div>
-           <div>
-            <Pagination/>
-           </div>
          </div>
         </div>
       ))}

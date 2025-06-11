@@ -6,12 +6,14 @@ import { useParams } from 'next/navigation';
 import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import { MdErrorOutline } from "react-icons/md";
 
 interface FarmData {
   id: string;
   img: string;
   imglogo: string;
   title: string;
+  error: string;
   location: string;
   desc: string;
 }
@@ -22,6 +24,7 @@ const data: FarmData[] = [
     img: "/assets/greenfarm1/greenfarm1.png",
     imglogo: "/assets/head.png",
     title: "Green Valley Farm",
+    error:"This farm produces organic products",
     location: "Sacramento, CA 95814",
     desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
   },
@@ -30,6 +33,7 @@ const data: FarmData[] = [
     img: "/assets/greenfarm1/greenfarm2.png",
     imglogo: "/assets/head.png",
     title: "Green Valley Farm",
+    error:"This farm produces organic products",
     location: "Sacramento, CA 95814",
     desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
   },
@@ -38,6 +42,7 @@ const data: FarmData[] = [
     img: "/assets/greenfarm1/greenfarm3.png",
     imglogo: "/assets/head.png",
     title: "Green Valley Farm",
+    error:"This farm produces organic products",
     location: "Sacramento, CA 95814",
     desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
   },
@@ -46,6 +51,7 @@ const data: FarmData[] = [
     img: "/assets/greenfarm1/greenfarm4.png",
     imglogo: "/assets/head.png",
     title: "Green Valley Farm",
+    error:"This farm produces organic products",
     location: "Sacramento, CA 95814",
     desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
   },
@@ -62,14 +68,18 @@ const FarmDetailsPage = () => {
   return (
     <div className="  py-4">
       <Image src={farm.img} alt={farm.title} width={200} height={50}  className="w-full h-[300px]"/>
-      <div className="container">
+      <div className="container py-4">
         <div className="flex gap-3">
+
+
+          {/* fdfdfd */}
           <div>
-            <Image src="/assets/head.png" alt="head" width={50} height={50}/>
+            <Image src="/assets/head.png" alt="head" width={80} height={80}/>
           </div>
           <div>
             <h2 className="text-2xl font-bold">{farm.title}</h2>
-        <p className="flex items-center gap-2 text-gray-500"><CiLocationOn /> {farm.location}</p>
+        <p className="flex items-center gap-2 text-green-500"><MdErrorOutline className="text-green-500"/> {farm.error}</p>
+        <p className="flex items-center gap-2 text-gray-500"><CiLocationOn className="text-green-500"/> {farm.location}</p>
           </div>
         </div>
         <p className="py-5">{farm.desc}</p>
