@@ -72,7 +72,7 @@ const FarmDetailsPage = () => {
         <p className="flex items-center gap-2 text-gray-500"><CiLocationOn /> {farm.location}</p>
           </div>
         </div>
-        <p className="py-4">{farm.desc}</p>
+        <p className="py-5">{farm.desc}</p>
         <div className="flex items-center gap-2">
           <FaStar className="text-yellow-500" />
           <p className="font-bold">4.9 (127 reviews)</p>
