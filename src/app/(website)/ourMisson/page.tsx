@@ -1,56 +1,119 @@
-import HeroSection from '@/components/common/HeroSection';
-import Image from 'next/image';
-import React from 'react';
-import WhatCustomers from '../what_ourCustomers/page';
+import HeroSection from "@/components/common/HeroSection";
+import Image from "next/image";
+import React from "react";
+import WhatCustomers from "../what_ourCustomers/page";
 
 const OurMission = () => {
-    return (
-        <div>
-            <HeroSection heading='Our Mission' paragraph='lorem ipsum is a dummy of placeholder text commutnity used in graphic design publishigng and web Development' image="/assets/aboutUs.png" />
+  return (
+    <div className="">
+      <HeroSection
+        heading="Our Mission"
+        paragraph="lorem ipsum is a dummy of placeholder text commutnity used in graphic design publishigng and web Development"
+        image="/assets/aboutUs.png"
+      />
 
-            <div className="flex justify-center items-center text-center py-7"> 
-                <div>
-                    <p className="text-green-500">About Table Fresh</p>
-                <p className="text-black font-bold text-2xl">Your Online Source For Fresh Food and Vegitables</p>
-                <p>Our core concept is to bring local people togather with fresh a healthy food</p>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 container">
-                <div className="w-2/8 order-1 md:order-2">
-                    <Image src="/assets/about/aboutUs1.png" alt="logo" width={500} height={800}/>
-                </div>
-               <div className="w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
-                 <div >
-                    <p className="font-bold text-2xl">Conecting 60 milions gardens accross america</p>
-                    <p>A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and </p>
-                </div>
-               </div>
-            </div>
-            <div className=" grid grid-cols-1 md:grid-cols-2 container py-8">
-                <div className="w-2/8 ">
-                    <Image src="/assets/about/aboutUs1.png" alt="logo" width={500} height={800}/>
-                </div>
-               <div className="w-2/8  flex justify-center items-center mx-auto ">
-                 <div >
-                    <p className="font-bold text-2xl">Conecting 60 milions gardens accross america</p>
-                    <p>A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and </p>
-                </div>
-               </div>
-            </div>
-            <div className="container grid grid-cols-1 md:grid-cols-2">
-                <div className="w-2/8 order-1 md:order-2">
-                    <Image src="/assets/about/aboutUs1.png" alt="logo" width={500} height={800}/>
-                </div>
-               <div className="w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
-                 <div >
-                    <p className="font-bold text-2xl">Conecting 60 milions gardens accross america</p>
-                    <p>A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long.A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and </p>
-                </div>
-               </div>
-            </div>
-            <WhatCustomers/>
+      <div className="container flex justify-center items-center text-center py-7">
+        <div>
+          <p className="text-green-500">Mission Table Fresh</p>
+          <p className="text-black font-bold text-2xl">
+            Connecting People Through Food, Building Community Through Tradition
+          </p>
+          <p>
+            Taking control from corporations and putting it back in the hands of
+            the people, where it belongs.
+          </p>
         </div>
-    );
+      </div>
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-9">
+        <div className="w-full md:w-2/8 order-1 md:order-2">
+          <Image
+            src="/assets/about/aboutUs1.png"
+            alt="logo"
+            width={500}
+            height={800}
+          />
+        </div>
+        <div className="w-full  md:w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
+          <div>
+            <p className="font-bold text-2xl py-[24px]">
+              A Journey Through Time
+            </p>
+           <div className="bg-white w-full md:w-[628px] h-[80px]">
+             <p>
+              For millennia, food has changed and transformed cultures and
+              societies. Ships sailed around the world seeking routes to the Far
+              East in search of spices.
+            </p>
+           </div> 
+            <p className="py-[24px]">
+              The Silk Road, the world first global trade route, carried food,
+              spices, gold and goods from the Far East to the Middle East and
+              European continent.
+            </p>
+            <p>
+              Today food is flown around the world in a matter of hours. Every
+              grocery store has amazing selection with seasonality no longer
+              applying. “But, at what cost”.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="container  grid grid-cols-1 md:grid-cols-2 py-8">
+        <div className="w-full md:w-2/8 ">
+          <Image
+            src="/assets/about/aboutUs1.png"
+            alt="logo"
+            width={500}
+            height={800}
+          />
+        </div>
+        <div className="w-full md:w-2/8  flex justify-center items-center mx-auto ">
+          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3">
+            <p className="font-bold text-2xl">
+             Genetic Modification
+            </p>
+            <p>
+              Altering the natural structure of our food for profit over health.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-9">
+        <div className="w-full md:w-2/8 order-1 md:order-2">
+          <Image
+            src="/assets/about/aboutUs1.png"
+            alt="logo"
+            width={500}
+            height={800}
+          />
+        </div>
+        <div className="w-full md:w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
+          <div>
+            <p className="font-bold text-2xl py-[24px]">Table Fresh Mission</p>
+            <p>
+              Our mission is to connect people through food, fresh grown
+              vegetables , building community with a healthy fresh alternative
+              to grocery stores.
+            </p>
+            <p className="py-[24px]">
+              We re not stopping there, we want to include everyone. From small
+              farms to organic farms and food makers, such as flour, cheese and
+              smoked meats. Preserves, like jellies and jams and canned goods
+              from home processors. Home bakers with artisan breads and baked
+              goods. Cooks and caterers
+            </p>
+            <p>
+              Let Table Fresh serve as the platform to launch you own small food
+              business, local and healthy. Taking control from the government
+              and corporations and putting it back in the hands of the people,
+              where it belongs!
+            </p>
+          </div>
+        </div>
+      </div>
+      <WhatCustomers />
+    </div>
+  );
 };
 
 export default OurMission;

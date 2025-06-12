@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
         <div className='flex items-center justify-between px-4 py-2'>
           <Link href="/">
             <Image
-              src="/assets/img/Discount-me-01-01.png"
+              src="/assets/logo.png"
               alt="discount"
               height={60}
               width={140}
