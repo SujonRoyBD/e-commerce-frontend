@@ -1,3 +1,4 @@
+'use client';
 import HeroSection from '@/components/common/HeroSection';
 import React from 'react';
 import Features from './features-farm/page';

@@ -7,6 +7,7 @@ import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
+import FarmProduct from '../farmProduct/page';
 
 interface FarmData {
   id: string;
@@ -88,6 +89,9 @@ const FarmDetailsPage = () => {
           <p className="font-bold">4.9 (127 reviews)</p>
         </div>
         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded">Book Visit</button>
+      </div>
+      <div>
+        <FarmProduct/>
       </div>
     </div>
   );
