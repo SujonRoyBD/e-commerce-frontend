@@ -11,9 +11,10 @@ const config: Config = {
 		extend: {
 			container: {
 				padding: {
+					DEFAULT: "16PX",
 					sm: '20px',
-					md: '60px',
-					lg: '90px',
+					md: '40px',
+					lg: '60px',
 					xl: '80px'
 				},
 

@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -142,10 +143,12 @@ const Features2 = () => {
                 <p>(127)</p>
             </div>
           </div>
+         <Link href={`/farm2/${item.id}`}>
          <div className="flex gap-3">
            <button className="font-bold text-green-500">View farms</button>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
          </div>
+         </Link>
         </div>
       ))}
      </div>
