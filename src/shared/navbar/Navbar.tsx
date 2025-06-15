@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       {/* Desktop Navbar */}
-      <div className="block md:hidden flex items-center justify-between px-8 py-3 border-b border-gray-200">
+      <div className=" md:hidden flex items-center justify-between px-8 py-3 border-b border-gray-200">
         {/* Logo */}
         <Link href="/">
           <Image src="/assets/logo.png" alt="Logo" height={60} width={100} />
