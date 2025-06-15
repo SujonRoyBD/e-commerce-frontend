@@ -11,13 +11,20 @@ const config: Config = {
     	extend: {
     		container: {
     			padding: {
-    				DEFAULT: '16PX',
+    				DEFAULT: '16px',
     				sm: '20px',
     				md: '40px',
     				lg: '60px',
     				xl: '80px'
     			}
     		},
+			   screens: {
+      sm: '640px',
+      md: '768px', // ✅ Ensure md is set like this
+      lg: '1024px',
+      xl: '1280px',
+    },
+
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
@@ -87,7 +94,8 @@ const config: Config = {
     			'accordion-down': 'accordion-down 0.2s ease-out',
     			'accordion-up': 'accordion-up 0.2s ease-out'
     		}
-    	}
+    	},
+		
     },
 	plugins: [require("tailwindcss-animate")],
 };

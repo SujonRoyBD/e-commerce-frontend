@@ -1,4 +1,6 @@
+
 "use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { IoMenu } from "react-icons/io5";
@@ -13,36 +15,37 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/components/ui/sheet"; // adjust path if needed
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/aboutUs" },
-  { name: "Mission", href: "/ourMisson" },
+  { name: "Mission", href: "/ourMission" },
   { name: "Become a seller", href: "/dashboard" },
   { name: "Blog", href: "/ourBlog" },
-  { name: "FAQ", href: "/dashboard" },
-  { name: "Contact", href: "/dashboard" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
       {/* Desktop Navbar */}
-      <div className=" md:block  flex items-center justify-between px-8 py-3 border-b border-gray-200">
+      <div className="block md:hidden flex items-center justify-between px-8 py-3 border-b border-gray-200">
         {/* Logo */}
         <Link href="/">
           <Image src="/assets/logo.png" alt="Logo" height={60} width={100} />
         </Link>
-        {/* Nav Links */}
+
+        {/* Navigation Links */}
         <div className="flex gap-6">
           {navLinks.map((item, idx) => (
-            <Link 
+            <Link
               key={idx}
               href={item.href}
-              className="text-gray-700 gap-9 hover:text-red-500 transition"
+              className="text-gray-700 hover:text-red-500 transition"
             >
               {item.name}
             </Link>
@@ -70,35 +73,29 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="block md:hidden px-4 py-2 border-t border-gray-100">
+      <div className="flex md:hidden items-center justify-between px-4 py-3 border-b border-gray-200">
+        {/* Logo */}
+        <Link href="/">
+          <Image src="/assets/logo.png" alt="Logo" height={40} width={100} />
+        </Link>
+
+        {/* Menu Toggle */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger
-            className="flex items-center justify-between w-full"
-            aria-label="Open menu"
-          >
-            <Link href="/">
-              <Image
-                src="/assets/logo.png"
-                alt="Logo"
-                height={40}
-                width={100}
-              />
-            </Link>
+          <SheetTrigger asChild>
             <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
               {isOpen ? <RxCross2 size={24} /> : <IoMenu size={24} />}
             </button>
           </SheetTrigger>
-
-          <SheetContent side="left" className="bg-white w-full">
+          <SheetContent side="left" className="bg-white w-[250px]">
             <SheetHeader>
               <SheetDescription>
-                <ul className="flex flex-col items-center justify-center gap-2 mt-6">
+                <ul className="flex flex-col gap-3 mt-6">
                   {navLinks.map((item, idx) => (
                     <li key={idx}>
                       <Link
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded text-lg font-medium transition"
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded text-base font-medium"
                       >
                         {item.name}
                       </Link>
@@ -110,8 +107,9 @@ const Navbar: React.FC = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </div>
+    </nav>
   );
 };
 
 export default Navbar;
+

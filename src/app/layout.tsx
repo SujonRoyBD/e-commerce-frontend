@@ -32,9 +32,8 @@ export default function RootLayout({
       >
         <Navbar/>
         {children}
-        <div className="py-9">
         <Footer/>
-        </div>
+       
        
       </body>
     </html>

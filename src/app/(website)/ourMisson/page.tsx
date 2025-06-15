@@ -61,7 +61,7 @@ const OurMission = () => {
       <div className="container  grid grid-cols-1 md:grid-cols-2 py-8">
         <div className="w-full md:w-2/8 ">
           <Image
-            src="/assets/about/aboutUs1.png"
+            src="/assets/about/aboutUs2.png"
             alt="logo"
             width={500}
             height={800}
@@ -76,12 +76,28 @@ const OurMission = () => {
               Altering the natural structure of our food for profit over health.
             </p>
           </div>
+          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3">
+            <p className="font-bold text-2xl">
+             Genetic Modification
+            </p>
+            <p>
+              Altering the natural structure of our food for profit over health.
+            </p>
+          </div>
+          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3">
+            <p className="font-bold text-2xl">
+             Genetic Modification
+            </p>
+            <p>
+              Altering the natural structure of our food for profit over health.
+            </p>
+          </div>
         </div>
       </div>
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-9">
         <div className="w-full md:w-2/8 order-1 md:order-2">
           <Image
-            src="/assets/about/aboutUs1.png"
+            src="/assets/about/aboutUs3.png"
             alt="logo"
             width={500}
             height={800}
