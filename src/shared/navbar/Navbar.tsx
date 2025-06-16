@@ -20,11 +20,11 @@ import {
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/aboutUs" },
-  { name: "Mission", href: "/ourMission" },
+  { name: "Mission", href: "/ourMisson" },
   { name: "Become a seller", href: "/dashboard" },
   { name: "Blog", href: "/ourBlog" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contactUs" },
 ];
 
 const Navbar: React.FC = () => {
