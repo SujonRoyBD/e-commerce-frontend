@@ -83,7 +83,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[350px]">
+            <SheetContent side="left" className="w-[290px] sm:w-[350px]">
               <div className="flex flex-col space-y-4 mt-8">
                 {/* Mobile Navigation Links */}
                 {navigationItems.map((item) => (
