@@ -1,115 +1,122 @@
+"use client"
 
-"use client";
+import { Search, ShoppingCart, Menu, Leaf } from "lucide-react"
+import Link from "next/link"
+import { useState } from "react"
 
-import Link from "next/link";
-import Image from "next/image";
-import { IoMenu } from "react-icons/io5";
-import { RxCross2 } from "react-icons/rx";
-import { FaRegComment } from "react-icons/fa";
-import { BsCart2 } from "react-icons/bs";
-import { GiRoyalLove } from "react-icons/gi";
-import { useState } from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet"; // adjust path if needed
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const navLinks = [
+const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/aboutUs" },
   { name: "Mission", href: "/ourMisson" },
-  { name: "Become a seller", href: "/dashboard" },
+  { name: "Become a Seller", href: "/become-seller" },
   { name: "Blog", href: "/ourBlog" },
   { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contactUs" },
-];
+]
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
-      {/* Desktop Navbar */}
-      <div className=" md:hidden flex items-center justify-between px-8 py-3 border-b border-gray-200">
+    <header className="w-full border-b bg-white sticky top-0 z-50">
+      <div className="container mx-auto flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <Image src="/assets/logo.png" alt="Logo" height={60} width={100} />
+        <Link href="/" className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
+            <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
+            <div className="flex flex-col">
+              <span className="text-sm sm:text-lg font-bold text-gray-900">TABLE</span>
+              <span className="text-sm sm:text-lg font-bold text-green-600">FRESH</span>
+            </div>
+          </div>
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex gap-6">
-          {navLinks.map((item, idx) => (
+        {/* Desktop Navigation - Hidden on mobile, visible on md and up */}
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          {navigationItems.map((item) => (
             <Link
-              key={idx}
+              key={item.name}
               href={item.href}
-              className="text-gray-800 hover:text-red-500 transition"
+              className="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors duration-200"
             >
               {item.name}
             </Link>
           ))}
-        </div>
+        </nav>
 
-        {/* Right Icons */}
-        <div className="flex items-center gap-4">
-          <Link href="/cart" aria-label="Comments">
-            <FaRegComment className="text-2xl" />
-          </Link>
-          <Link href="/login" aria-label="Cart">
-            <BsCart2 className="text-2xl" />
-          </Link>
-          <Link href="/cart">
-            <Image src="/assets/head.png" alt="head" height={40} width={40} />
-          </Link>
-          <Link
-            href="/donate"
-            className="flex items-center px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600"
-          >
-            <GiRoyalLove className="mr-1" /> <span>Donate</span>
-          </Link>
+        {/* Right Side Actions */}
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Desktop Icons - Hidden on mobile */}
+          <div className="hidden sm:flex items-center space-x-2">
+            <Button variant="ghost" size="icon" className="h-9 w-9">
+              <Search className="h-4 w-4 text-gray-600" />
+              <span className="sr-only">Search</span>
+            </Button>
+
+            <Button variant="ghost" size="icon" className="h-9 w-9">
+              <ShoppingCart className="h-4 w-4 text-gray-600" />
+              <span className="sr-only">Shopping cart</span>
+            </Button>
+
+            <Avatar className="h-8 w-8">
+              <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+              <AvatarFallback>U</AvatarFallback>
+            </Avatar>
+          </div>
+
+          {/* Donate Button - Always visible but responsive sizing */}
+          <Button className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 sm:px-4 text-xs sm:text-sm rounded-md">
+            <span className="mr-1">♥</span>
+            <span className="hidden xs:inline">Donate</span>
+            <span className="xs:hidden">♥</span>
+          </Button>
+
+          {/* Mobile Menu Button - Only visible on mobile */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden h-9 w-9">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[350px]">
+              <div className="flex flex-col space-y-4 mt-8">
+                {/* Mobile Navigation Links */}
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-lg font-medium text-white hover:text-green-600 transition-colors duration-200 py-2 border-b border-gray-100 last:border-b-0"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+
+                {/* Mobile Action Icons */}
+                <div className="flex items-center justify-center space-x-6 pt-6 border-t border-gray-200">
+                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                    <Search className="h-5 w-5 text-gray-600" />
+                    <span className="sr-only">Search</span>
+                  </Button>
+                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                    <ShoppingCart className="h-5 w-5 text-gray-600" />
+                    <span className="sr-only">Shopping cart</span>
+                  </Button>
+                  <Avatar className="h-10 w-10">
+                    <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User" />
+                    <AvatarFallback>U</AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-
-      {/* Mobile Navbar */}
-      <div className="flex md:hidden items-center justify-between px-4 py-3 border-b border-gray-200">
-        {/* Logo */}
-        <Link href="/">
-          <Image src="/assets/logo.png" alt="Logo" height={40} width={100} />
-        </Link>
-
-        {/* Menu Toggle */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-              {isOpen ? <RxCross2 size={24} /> : <IoMenu size={24} />}
-            </button>
-          </SheetTrigger>
-          <SheetContent side="left" className="bg-white w-[250px]">
-            <SheetHeader>
-              <SheetDescription>
-                <ul className="flex flex-col gap-3 mt-6">
-                  {navLinks.map((item, idx) => (
-                    <li key={idx}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded text-base font-medium"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
-
+    </header>
+  )
+}
