@@ -27,7 +27,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-1">
-            <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
+            <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-green-700" />
             <div className="flex flex-col">
               <span className="text-sm sm:text-lg font-bold text-gray-900">TABLE</span>
               <span className="text-sm sm:text-lg font-bold text-green-600">FRESH</span>
