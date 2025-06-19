@@ -7,10 +7,11 @@ import { FaArrowRight } from "react-icons/fa";
 import WhatCustomers from '../what_ourCustomers/page';
 import AccordionDemo from '../according/page';
 import Link from 'next/link';
-import { blogData } from '../data/page';
-// ✅ blogData import করছো
+import { BlogData } from '../../../components/data/page';
+// ✅ blogBlogDataData import করছো
 
 const OurBlog = () => {
+ 
   return (
     <div>
       <HeroSection
@@ -30,10 +31,10 @@ const OurBlog = () => {
       </div>
 
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
-        {blogData.map((item) => (
+        {BlogData?.map((item) => (
           <div key={item.id}>
             <Image src={item.img} alt={item.title} width={500} height={300} className="rounded-md w-full" />
-            <div className="flex justify-between text-sm text-gray-500 mt-3">
+            <div className="flex justify-between text-lg text-gray-500 mt-3">
               <p>{item.date}</p>
               <p>{item.location}</p>
             </div>
