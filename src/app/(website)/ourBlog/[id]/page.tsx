@@ -1,14 +1,14 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { blogData } from "../../data/page"; // ঠিক আছে যদি এখানে blogData export করা থাকে
 import Image from "next/image";
 import WhatCustomers from "../../what_ourCustomers/page";
+import { BlogData } from "../../../../components/data/page";
 
 const Details = () => {
   const params = useParams();
   const id = Number(params.id);
-  const blog = blogData.find((item) => item.id === id);
+  const blog = BlogData?.find((item) => item.id === id);
 
   if (!blog) return <div>Not found</div>;
 
