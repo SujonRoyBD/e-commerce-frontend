@@ -1,117 +1,102 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { IoMenu } from "react-icons/io5";
-import { RxCross2 } from "react-icons/rx";
-import { FaRegComment } from "react-icons/fa";
-import { BsCart2 } from "react-icons/bs";
-import { GiRoyalLove } from "react-icons/gi";
-import { useState } from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+"use client"
 
-const navLinks = [
+import { Search, ShoppingCart, Leaf } from "lucide-react"
+import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
+const navigationItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/aboutUs" },
-  { name: "Mission", href: "/ourMisson" },
-  { name: "Become a seller", href: "/dashboard" },
-  { name: "Blog", href: "/ourBlog" },
-  { name: "FAQ", href: "/dashboard" },
-  { name: "Contact", href: "/dashboard" },
-];
+  { name: "About", href: "/about" },
+  { name: "Mission", href: "/mission" },
+  { name: "Become a Seller", href: "/become-seller" },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact", href: "/contact" },
+]
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function Navbar() {
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-md">
-      {/* Desktop Navbar */}
-      <div className=" md:block  flex items-center justify-between px-8 py-3 border-b border-gray-200">
+    <header className="w-full border-b bg-white">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/">
-          <Image src="/assets/logo.png" alt="Logo" height={60} width={100} />
+        <Link href="/" className="flex items-center space-x-2">
+          <div className="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full">
+            <Leaf className="w-5 h-5 text-green-600" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-gray-900 leading-none">TABLE</span>
+            <span className="text-lg font-bold text-green-600 leading-none">FRESH</span>
+          </div>
         </Link>
-        {/* Nav Links */}
-        <div className="flex gap-6">
-          {navLinks.map((item, idx) => (
-            <Link 
-              key={idx}
+
+        {/* Navigation Links - Hidden on mobile */}
+        <nav className="hidden lg:flex items-center space-x-8">
+          {navigationItems.map((item) => (
+            <Link
+              key={item.name}
               href={item.href}
-              className="text-gray-700 gap-9 hover:text-red-500 transition"
+              className="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors"
             >
               {item.name}
             </Link>
           ))}
-        </div>
+        </nav>
 
-        {/* Right Icons */}
-        <div className="flex items-center gap-4">
-          <Link href="/cart" aria-label="Comments">
-            <FaRegComment className="text-2xl" />
-          </Link>
-          <Link href="/login" aria-label="Cart">
-            <BsCart2 className="text-2xl" />
-          </Link>
-          <Link href="/cart">
-            <Image src="/assets/head.png" alt="head" height={40} width={40} />
-          </Link>
-          <Link
-            href="/donate"
-            className="flex items-center px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600"
-          >
-            <GiRoyalLove className="mr-1" /> <span>Donate</span>
-          </Link>
+        {/* Right side actions */}
+        <div className="flex items-center space-x-4">
+          {/* Search Icon */}
+          <Button variant="ghost" size="icon" className="hidden md:flex">
+            <Search className="h-5 w-5 text-gray-600" />
+            <span className="sr-only">Search</span>
+          </Button>
+
+          {/* Shopping Cart */}
+          <Button variant="ghost" size="icon" className="relative">
+            <ShoppingCart className="h-5 w-5 text-gray-600" />
+            <span className="sr-only">Shopping cart</span>
+          </Button>
+
+          {/* User Avatar */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+                </Avatar>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end" forceMount>
+              <DropdownMenuItem>
+                <Link href="/profile">Profile</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/orders">Orders</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/settings">Settings</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>Sign out</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Donate Button */}
+          <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+            <span className="mr-1">♥</span>
+            Donate
+          </Button>
+
+          {/* Mobile menu button - you can add a hamburger menu here */}
+          <Button variant="ghost" size="icon" className="lg:hidden">
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span className="sr-only">Open menu</span>
+          </Button>
         </div>
       </div>
-
-      {/* Mobile Navbar */}
-      <div className="block md:hidden px-4 py-2 border-t border-gray-100">
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger
-            className="flex items-center justify-between w-full"
-            aria-label="Open menu"
-          >
-            <Link href="/">
-              <Image
-                src="/assets/logo.png"
-                alt="Logo"
-                height={40}
-                width={100}
-              />
-            </Link>
-            <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-              {isOpen ? <RxCross2 size={24} /> : <IoMenu size={24} />}
-            </button>
-          </SheetTrigger>
-
-          <SheetContent side="left" className="bg-white w-full">
-            <SheetHeader>
-              <SheetDescription>
-                <ul className="flex flex-col items-center justify-center gap-2 mt-6">
-                  {navLinks.map((item, idx) => (
-                    <li key={idx}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded text-lg font-medium transition"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;
+    </header>
+  )
+}

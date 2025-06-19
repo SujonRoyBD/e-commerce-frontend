@@ -61,14 +61,14 @@ const Features = () => {
         <div key={item.id}>
           <div className="relative"> 
            <div className="bg-white p-2 rounded-full absolute right-2 top-2"> <FaRegComment /></div>
-           <div className="z-20"> <Image src={item.img} alt="Logo" width={372} height={260} /></div>
+           <div className="z-20"> <Image src={item.img} alt="Logo" width={372} height={260}/></div>
             </div>
           <div className="flex gap-[8px] py-[24px]">
             <div>
              <Image src={item.imglogo} alt="Logo" width={56} height={56} />
             </div>
             <div>
-                 <h2 className="font-bold ">{item.title}</h2>
+                 <h2 className="font-bold">{item.title}</h2>
                 <p className="flex gap-[5px]"> <CiLocationOn className="mt-1" /> {item.location}</p>
             </div>
         </div> 
@@ -84,7 +84,7 @@ const Features = () => {
           </div>
          <Link href={`/farm/${item.id}`}>
          <div className="flex gap-3">
-           <button className="font-bold text-green-500">View farms</button>
+           <span className="font-bold text-green-500">View farms</span>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
          </div>
          </Link>

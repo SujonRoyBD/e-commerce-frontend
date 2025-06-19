@@ -1,6 +1,12 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
-import { FaArrowRight, FaArrowLeft, FaStar } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {  Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import { useSwiper } from 'swiper/react';
 
 interface FarmData {
   id: number;
@@ -8,28 +14,50 @@ interface FarmData {
   title: string;
   location: string;
   desc: string;
-  imglogo?: string;
 }
 
 const WhatCustomers: React.FC = () => {
+  const swiper = useSwiper();
+
   const data: FarmData[] = [
     {
       id: 1,
-      desc: "I've been ordering from TABLEFRESH for over a year now, and the quality of their organic produce is consistently excellent. The convenience of having fresh, organic food delivered to my door has made healthy eating so much easier for my family.",
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
       img: "/assets/head.png",
       title: "Sarah Johnson",
       location: "Portland, OR",
     },
     {
       id: 2,
-      desc: "I've been ordering from TABLEFRESH for over a year now, and the quality of their organic produce is consistently excellent. The convenience of having fresh, organic food delivered to my door has made healthy eating so much easier for my family.",
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
       img: "/assets/head.png",
       title: "Michael Brown",
       location: "Austin, TX",
     },
     {
       id: 3,
-      desc: "I've been ordering from TABLEFRESH for over a year now, and the quality of their organic produce is consistently excellent. The convenience of having fresh, organic food delivered to my door has made healthy eating so much easier for my family.",
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      img: "/assets/head.png",
+      title: "Emily Davis",
+      location: "Seattle, WA",
+    },
+    {
+      id: 1,
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      img: "/assets/head.png",
+      title: "Sarah Johnson",
+      location: "Portland, OR",
+    },
+    {
+      id: 2,
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      img: "/assets/head.png",
+      title: "Michael Brown",
+      location: "Austin, TX",
+    },
+    {
+      id: 3,
+      desc: "I've been ordering from TABLEFRESH for over a year now...",
       img: "/assets/head.png",
       title: "Emily Davis",
       location: "Seattle, WA",
@@ -40,37 +68,52 @@ const WhatCustomers: React.FC = () => {
     <div className="container mx-auto py-12">
       <div className="flex justify-between items-center mb-8">
         <p className="font-bold text-xl">What Our Customers Say</p>
-        <div className="flex gap-4">
-          <button className="w-[60px] h-[25px] border border-green-500  flex items-center justify-center text-green-500">
-            <FaArrowLeft />
-          </button>
-          <button className="w-[60px] h-[25px] border border-green-500  flex items-center justify-center text-green-500">
-            <FaArrowRight />
-          </button>
-        </div>
+       <div className="flex items-center gap-2">
+         <button onClick={() => swiper.slideNext()} className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black ">right</button>
+        <button onClick={() => swiper.slidePrev()} className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black ">left</button>
+       </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Swiper
+        spaceBetween={30}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
+        modules={[Autoplay]}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        className="mySwiper"
+      >
         {data.map((item) => (
-          <div key={item.id} className="p-4 border rounded-lg shadow-sm">
-            <div className="flex text-yellow-500 gap-1 mb-2">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar className="text-gray-500" />
-            </div>
-            <p className="text-gray-700 mb-4">{item.desc}</p>
-            <div className="flex items-center gap-3">
-              <Image src={item.img} height={50} width={50} alt="head" className="rounded-full" />
-              <div>
-                <p className="font-semibold">{item.title}</p>
-                <p className="text-sm text-gray-500">{item.location}</p>
+          <SwiperSlide key={item.id}>
+            <div className="p-4 border rounded-lg shadow-sm bg-white h-full">
+              <div className="flex text-yellow-500 gap-1 mb-2">
+                <FaStar /><FaStar /><FaStar /><FaStar />
+                <FaStar className="text-gray-400" />
+              </div>
+              <p className="text-gray-700 mb-4">{item.desc}</p>
+              <div className="flex items-center gap-3">
+                <Image src={item.img} height={50} width={50} alt="head" className="rounded-full" />
+                <div>
+                  <p className="font-semibold">{item.title}</p>
+                  <p className="text-sm text-gray-500">{item.location}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };

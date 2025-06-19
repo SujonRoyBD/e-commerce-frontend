@@ -145,7 +145,7 @@ const Features2 = () => {
           </div>
          <Link href={`/farm2/${item.id}`}>
          <div className="flex gap-3">
-           <button className="font-bold text-green-500">View farms</button>
+           <span className="font-bold text-green-500">View farms</span>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
          </div>
          </Link>
