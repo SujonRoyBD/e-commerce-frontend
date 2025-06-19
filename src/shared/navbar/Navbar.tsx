@@ -4,17 +4,17 @@ import { Search, ShoppingCart, Leaf } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const navigationItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Mission", href: "/mission" },
+  { name: "About", href: "/aboutUs" },
+  { name: "Mission", href: "/ourMisson" },
   { name: "Become a Seller", href: "/become-seller" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/ourBlog" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contactUs" },
 ]
 
 export default function Navbar() {
