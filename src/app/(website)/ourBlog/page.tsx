@@ -34,7 +34,7 @@ const OurBlog = () => {
         {BlogData?.map((item) => (
           <div key={item.id}>
             <Image src={item.img} alt={item.title} width={500} height={300} className="rounded-md w-full" />
-            <div className="flex justify-between text-sm text-gray-500 mt-3">
+            <div className="flex justify-between text-lg text-gray-500 mt-3">
               <p>{item.date}</p>
               <p>{item.location}</p>
             </div>
