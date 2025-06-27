@@ -19,7 +19,7 @@ const navigationItems: NavigationItem[] = [
   { name: "Become a Seller", href: "/become-seller" },
   { name: "Blog", href: "/ourBlog" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contactUs" },
 ]
 
 export default function Navbar() {
@@ -96,7 +96,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col space-y-4 mt-8">
                 {/* Mobile Logo */}
                 <div className="flex items-center space-x-2 pb-4 border-b">
@@ -119,7 +119,7 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-lg font-medium text-gray-700 hover:text-green-600 transition-colors py-2"
+                      className="text-lg font-medium text-white hover:text-green-600 transition-colors py-2"
                     >
                       {item.name}
                     </Link>
