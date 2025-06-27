@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image"
-import { useSelector } from 'react-redux'
-import { RootState } from "@/redux/store" 
 
 type NavigationItem = {
   name: string;
@@ -25,7 +23,6 @@ const navigationItems: NavigationItem[] = [
 ]
 
 export default function Navbar() {
-  const carts = useSelector((state: RootState) => state.carts.carts)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -68,7 +65,7 @@ export default function Navbar() {
           </Button>
           <Button variant="ghost" size="icon" className="text-gray-600 hover:text-green-600">
             <ShoppingCart className="h-5 w-5" />
-            <span className="sr-only"><sup>{carts?.length}</sup> Shopping cart</span>
+            <span className="sr-only"> Shopping cart</span>
           </Button>
           <Avatar className="h-8 w-8">
             <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
