@@ -4,8 +4,8 @@ import React from 'react';
 import Features from './features-farm/page';
 import Search from './search/page';
 import Banner from './banner-ads/page';
-import Features2 from './fratureFarm2/page';
 import WhatCustomers from './what_ourCustomers/page';
+import Features2 from './fratureFarm2/page';
 
 const HomePage = () => {
     return (
