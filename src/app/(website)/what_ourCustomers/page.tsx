@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Autoplay } from 'swiper/modules';
+import SwiperCore from 'swiper';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import { useSwiper } from 'swiper/react';
 
 interface FarmData {
   id: number;
@@ -17,7 +17,7 @@ interface FarmData {
 }
 
 const WhatCustomers: React.FC = () => {
-  const swiper = useSwiper();
+  const swiperRef = useRef<SwiperCore | null>(null);
 
   const data: FarmData[] = [
     {
@@ -29,19 +29,19 @@ const WhatCustomers: React.FC = () => {
     },
     {
       id: 2,
-      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      desc: "Amazing service! Everything is so fresh and on time.",
       img: "/assets/head.png",
       title: "Michael Brown",
       location: "Austin, TX",
     },
     {
       id: 3,
-      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      desc: "Best place to get fresh farm products online!",
       img: "/assets/head.png",
       title: "Emily Davis",
       location: "Seattle, WA",
     },
-    {
+     {
       id: 1,
       desc: "I've been ordering from TABLEFRESH for over a year now...",
       img: "/assets/head.png",
@@ -50,14 +50,14 @@ const WhatCustomers: React.FC = () => {
     },
     {
       id: 2,
-      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      desc: "Amazing service! Everything is so fresh and on time.",
       img: "/assets/head.png",
       title: "Michael Brown",
       location: "Austin, TX",
     },
     {
       id: 3,
-      desc: "I've been ordering from TABLEFRESH for over a year now...",
+      desc: "Best place to get fresh farm products online!",
       img: "/assets/head.png",
       title: "Emily Davis",
       location: "Seattle, WA",
@@ -68,35 +68,35 @@ const WhatCustomers: React.FC = () => {
     <div className="container mx-auto py-12">
       <div className="flex justify-between items-center mb-8">
         <p className="font-bold text-xl">What Our Customers Say</p>
-       <div className="flex items-center gap-2">
-         <button onClick={() => swiper.slideNext()} className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black ">right</button>
-        <button onClick={() => swiper.slidePrev()} className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black ">left</button>
-       </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black"
+          >
+            Left
+          </button>
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black"
+          >
+            Right
+          </button>
+        </div>
       </div>
 
       <Swiper
-        spaceBetween={30}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        navigation={true}
         modules={[Autoplay]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        spaceBetween={30}
         breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
         }}
-        className="mySwiper"
       >
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
             <div className="p-4 border rounded-lg shadow-sm bg-white h-full">
               <div className="flex text-yellow-500 gap-1 mb-2">
                 <FaStar /><FaStar /><FaStar /><FaStar />
@@ -104,7 +104,13 @@ const WhatCustomers: React.FC = () => {
               </div>
               <p className="text-gray-700 mb-4">{item.desc}</p>
               <div className="flex items-center gap-3">
-                <Image src={item.img} height={50} width={50} alt="head" className="rounded-full" />
+                <Image
+                  src={item.img}
+                  height={50}
+                  width={50}
+                  alt="head"
+                  className="rounded-full"
+                />
                 <div>
                   <p className="font-semibold">{item.title}</p>
                   <p className="text-sm text-gray-500">{item.location}</p>
@@ -114,6 +120,7 @@ const WhatCustomers: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+   
     </div>
   );
 };

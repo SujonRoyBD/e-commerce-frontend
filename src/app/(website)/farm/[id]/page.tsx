@@ -7,7 +7,6 @@ import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
-import FarmProduct from '../farmProduct/page';
 
 interface FarmData {
   id: string;
@@ -68,7 +67,7 @@ const FarmDetailsPage = () => {
 
   return (
     <div className="  py-4">
-      <Image src={farm.img} alt={farm.title} width={200} height={50}  className="w-full h-[300px]"/>
+      <Image src={farm.img} alt={farm.title} width={200} height={50}  className="container h-[300px]"/>
       <div className="container py-4">
         <div className="flex gap-3">
 
@@ -91,7 +90,6 @@ const FarmDetailsPage = () => {
         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded">Book Visit</button>
       </div>
       <div>
-        <FarmProduct/>
       </div>
     </div>
   );
