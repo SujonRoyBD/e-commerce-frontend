@@ -61,7 +61,7 @@ const Features2 = () => {
         <div key={item.id}>
           <div className="relative"> 
            <div className="bg-white p-2 rounded-full absolute right-2 top-2"> <FaRegComment /></div>
-           <div className="z-20"> <Image src={item.img} alt="Logo" width={372} height={260}/></div>
+           <div className="z-20"> <Image src={item.img} alt="Logo" width={372} height={260} className='w-[430px] md:w-[372px]'/></div>
             </div>
           <div className="flex gap-[8px] py-[24px]">
             <div>

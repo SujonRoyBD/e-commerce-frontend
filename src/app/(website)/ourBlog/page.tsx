@@ -8,7 +8,6 @@ import WhatCustomers from '../what_ourCustomers/page';
 import AccordionDemo from '../according/page';
 import Link from 'next/link';
 import { BlogData } from '../../../components/data/page';
-// ✅ blogBlogDataData import করছো
 
 const OurBlog = () => {
  
