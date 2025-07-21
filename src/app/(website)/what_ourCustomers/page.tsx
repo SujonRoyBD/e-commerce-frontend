@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 interface FarmData {
   id: number;
@@ -73,13 +75,13 @@ const WhatCustomers: React.FC = () => {
             onClick={() => swiperRef.current?.slidePrev()}
             className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black"
           >
-            Left
+            <FaArrowLeft/>
           </button>
           <button
             onClick={() => swiperRef.current?.slideNext()}
             className="border border-black rounded-[10px] py-2 px-6 text-base font-bold leading-normal text-black"
           >
-            Right
+            <FaArrowRight/>
           </button>
         </div>
       </div>

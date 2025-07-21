@@ -6,13 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image"
+import { useAppSelector } from "@/redux/hook/Hooks"
 
-type NavigationItem = {
-  name: string;
-  href: string;
-}
-
-const navigationItems: NavigationItem[] = [
+const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/aboutUs" },
   { name: "Mission", href: "/ourMisson" },
@@ -23,6 +19,7 @@ const navigationItems: NavigationItem[] = [
 ]
 
 export default function Navbar() {
+  const carts = useAppSelector((state) => state.carts.carts)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -38,7 +35,9 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-900">TABLE</span>
+              <span className="text-lg font-bold text-gray-900">
+                TABLE<sup>{carts?.length}</sup>
+              </span>
               <span className="text-sm font-medium text-green-600 -mt-1">FRESH</span>
             </div>
           </div>
@@ -65,11 +64,11 @@ export default function Navbar() {
           </Button>
           <Button variant="ghost" size="icon" className="text-gray-600 hover:text-green-600">
             <ShoppingCart className="h-5 w-5" />
-            <span className="sr-only"> Shopping cart</span>
+            <span className="sr-only">Shopping cart</span>
           </Button>
           <Avatar className="h-8 w-8">
-            <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
-            <Image src="/assets/head.png" alt="head" height={50} width={50} />
+            <AvatarImage src="/assets/head.png" alt="head" />
+            <AvatarFallback>U</AvatarFallback>
           </Avatar>
           <Button className="bg-green-600 hover:bg-green-700 text-white">
             <Heart className="h-4 w-4 mr-2" />
@@ -77,7 +76,7 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Actions */}
+        {/* Mobile Actions & Menu */}
         <div className="flex md:hidden items-center space-x-2">
           <Button variant="ghost" size="icon" className="text-gray-600">
             <Search className="h-5 w-5" />
@@ -88,7 +87,7 @@ export default function Navbar() {
             <span className="sr-only">Shopping cart</span>
           </Button>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu with Sheet */}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-gray-600">
@@ -119,7 +118,7 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-lg font-medium text-white hover:text-green-600 transition-colors py-2"
+                      className="text-lg font-medium text-gray-900 hover:text-green-600 transition-colors py-2"
                     >
                       {item.name}
                     </Link>

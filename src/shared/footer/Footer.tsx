@@ -7,7 +7,7 @@ import { FiTwitter } from "react-icons/fi";
 const Footer = () => {
     return (
         <div className="container pb-9">
-            <div className=" grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4  justify-between gap-[100px]">
+            <div className=" grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4  justify-between gap-[50px]">
                 <div>
                    <Image src="/assets/logo.png" alt="Logo" width={105} height={54} className='py-[24px]'/>
                    <p className="">Lorem ipsum is a dummy or placeholder text commonly used in graphic design.</p>
@@ -18,8 +18,8 @@ const Footer = () => {
                    </div>
                 </div>
                 <div>
-                    <button className="font-bold py-[24px]">Quick Links</button>
-                    <p>About Us</p>
+                    <button className="font-bold py-[24px]">Quick Links</button> 
+                    <p>About Us</p> 
                     <p>Mission</p>
                     <p>Become a Seller</p>
                     <p>Blog</p>
@@ -31,7 +31,7 @@ const Footer = () => {
                     <p>Privacy Policy</p>
                     <p>Terms & Conditions</p>
                 </div>
-                <div className='py-5'>
+                <div className=''>
                     <button className="font-bold py-[24px]">Contact Us</button>
                     <div className='py-[1px]'>
                     <p>123 Organi Way</p>

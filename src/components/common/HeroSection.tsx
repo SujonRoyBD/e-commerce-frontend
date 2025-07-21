@@ -16,5 +16,4 @@ const HeroSection = ({heading, paragraph, image}:HeroSectionProps) => {
         </div>
     );
 };
-
 export default HeroSection;
