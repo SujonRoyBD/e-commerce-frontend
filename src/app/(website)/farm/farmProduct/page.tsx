@@ -18,7 +18,7 @@ export interface BlogItem {
     title: "Green Valley Farm",
     time: "This farm produces organic products",
     location: "Sacramento, CA 95814",
-    desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+    desc: "Family-owned organics farm specializing in seasonal vegetables and herbs.",
   },
   {
     id: 2,
