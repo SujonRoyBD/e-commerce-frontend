@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image"
-import { useAppSelector } from "@/redux/hook/Hooks"
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -19,7 +18,6 @@ const navigationItems = [
 ]
 
 export default function Navbar() {
-  const carts = useAppSelector((state) => state.carts.carts)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -27,19 +25,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-              <div className="h-5 w-5 text-green-600">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
-                </svg>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-900">
-                TABLE<sup>{carts?.length}</sup>
-              </span>
-              <span className="text-sm font-medium text-green-600 -mt-1">FRESH</span>
-            </div>
+               <Image src="/assets/tableLogo.png" alt="logo" width={100} height={70}/>
           </div>
         </Link>
 
