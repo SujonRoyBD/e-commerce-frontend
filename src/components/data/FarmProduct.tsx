@@ -10,7 +10,7 @@ export interface BlogItem {
 }
 
 
- export const FarmProduct: BlogItem[] = [
+export const FarmProduct: BlogItem[] = [
     {
     id: 1,
     img: "/assets/greenfarm1/greenfarm1.png",

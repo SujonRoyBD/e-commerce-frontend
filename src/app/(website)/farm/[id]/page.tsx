@@ -7,7 +7,7 @@ import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
-import FarmProducts from '../../farmProduct2/page';
+// import FarmProducts from '../../farmProduct2/page';
 
 
 
@@ -94,7 +94,7 @@ const FarmDetailsPage = () => {
       </div>
       <div>
       </div>
-      <FarmProducts/>
+      {/* <FarmProducts/> */}
     </div>
   );
 };
