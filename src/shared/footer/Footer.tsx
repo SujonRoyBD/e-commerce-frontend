@@ -7,7 +7,7 @@ import { FiTwitter } from "react-icons/fi";
 const Footer = () => {
     return (
         <div className="container pb-9">
-            <div className=" grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4  justify-between gap-[50px]">
+            <div className=" grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4  justify-between gap-[80px]">
                 <div>
                    <Image src="/assets/logo.png" alt="Logo" width={105} height={54} className='py-[24px]'/>
                    <p className="">Lorem ipsum is a dummy or placeholder text commonly used in graphics design.</p>

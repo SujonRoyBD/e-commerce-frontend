@@ -7,7 +7,7 @@ import React from 'react';
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { MdErrorOutline } from "react-icons/md";
-// import FarmProducts from '../../farmProduct2/page';
+import FarmProducts from '../../farmProduct2/page';
 
 
 
@@ -58,6 +58,42 @@ const data: FarmData[] = [
     location: "Sacramento, CA 95814",
     desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
   },
+  {
+    id: "5",
+    img: "/assets/greenfarm1/greenfarm1.png",
+    imglogo: "/assets/head.png",
+    title: "Green Valley Farm",
+    error:"This farm produces organic products",
+    location: "Sacramento, CA 95814",
+    desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+  },
+  {
+    id: "6",
+    img: "/assets/greenfarm1/greenfarm2.png",
+    imglogo: "/assets/head.png",
+    title: "Green Valley Farm",
+    error:"This farm produces organic products",
+    location: "Sacramento, CA 95814",
+    desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+  },
+  {
+    id: "7",
+    img: "/assets/greenfarm1/greenfarm4.png",
+    imglogo: "/assets/head.png",
+    title: "Green Valley Farm",
+    error:"This farm produces organic products",
+    location: "Sacramento, CA 95814",
+    desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+  },
+  {
+    id: "8",
+    img: "/assets/greenfarm1/greenfarm3.png",
+    imglogo: "/assets/head.png",
+    title: "Green Valley Farm",
+    error:"This farm produces organic products",
+    location: "Sacramento, CA 95814",
+    desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+  },
 ];
 
 const FarmDetailsPage = () => {
@@ -73,7 +109,6 @@ const FarmDetailsPage = () => {
       <Image src={farm.img} alt={farm.title} width={200} height={50}  className="container h-[300px]"/>
       <div className="container py-4">
         <div className="flex gap-3">
-
 
           {/* fdfdfd */}
           <div>
@@ -94,7 +129,7 @@ const FarmDetailsPage = () => {
       </div>
       <div>
       </div>
-      {/* <FarmProducts/> */}
+      <FarmProducts/>
     </div>
   );
 };
