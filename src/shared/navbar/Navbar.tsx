@@ -54,7 +54,7 @@ export default function Navbar() {
           </Button>
           <Avatar className="h-8 w-8">
             <AvatarImage src="/assets/head.png" alt="head" />
-            <AvatarFallback>U</AvatarFallback>
+            
           </Avatar>
           <Button className="bg-green-600 hover:bg-green-700 text-white">
             <Heart className="h-4 w-4 mr-2" />
