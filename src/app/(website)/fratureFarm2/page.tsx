@@ -51,6 +51,38 @@ const Features2 = () => {
       location: "Sacramento, CA 95814",
       desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
     },
+     { id: "5",
+      img: "/assets/greenfarm1/greenfarm1.png",
+      imglogo: "/assets/head.png",
+      title: "Green Valley Farm",
+      location: "Sacramento, CA 95814",
+      desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+    },
+    {
+      id: "6",
+      img: "/assets/greenfarm1/greenfarm2.png",
+      imglogo: "/assets/head.png",
+      title: "Green Valley Farm",
+      location: "Sacramento, CA 95814",
+      desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+    },
+    {
+      id: "7",
+      img: "/assets/greenfarm1/greenfarm4.png",
+      imglogo: "/assets/head.png",
+      title: "Green Valley Farm",
+      location: "Sacramento, CA 95814",
+      desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+    },
+    
+    {
+      id: "8",
+      img: "/assets/greenfarm1/greenfarm3.png",
+      imglogo: "/assets/head.png",
+      title: "Green Valley Farm",
+      location: "Sacramento, CA 95814",
+      desc: "Family-owned organic farm specializing seasonal vegetables and herbs.",
+    },
     
   ];
 
@@ -75,19 +107,24 @@ const Features2 = () => {
           
          
           <p>{item.desc}</p>
-          <div className="flex gap-[8px]">
+          <div className="flex gap-9 py-3">
+            <div className="flex gap-[8px]">
             <FaStar className='text-yellow-500'/>
             <div className="flex gap-[8px]">
                 <p className="font-bold">4.9</p>
                 <p>(127)</p>
             </div>
           </div>
-         <Link href={`/farm/${item.id}`}>
+          <div>
+            <Link href={`/farm/${item.id}`}>
          <div className="flex gap-3">
            <span className="font-bold text-green-500">View farms</span>
           <div className="mt-2 w-4 text-green-500"> <FaArrowRight/></div>
          </div>
          </Link>
+          </div>
+          </div>
+         
         </div>
       ))}
      </div>

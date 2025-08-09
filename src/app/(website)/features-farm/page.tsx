@@ -60,14 +60,14 @@ const Features = () => {
   ];
 
   return (
-    <div className="container py-8">
+    <div className="container py-12 md:py-8 ">
 
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {data.map((item) => {
 
           return (
-            <div key={item.id} className="border p-4 rounded shadow-sm">
+            <div key={item.id} className="border border-black p-4 rounded shadow-sm">
               <div className="relative">
                 <div className="bg-white p-2 rounded-full absolute right-2 top-2">
                   <FaRegComment />
@@ -99,20 +99,23 @@ const Features = () => {
                 <span className="text-gray-500 text-sm">(127)</span>
               </div>
 
-              <div className="flex gap-2 my-2">
-                <span className="text-sm font-semibold text-green-700">
+              <div className="flex gap-12 my-2 ">
+                <p className="text-sm font-semibold text-green-700">
                   Price: ${item.price}
-                </span>
-              </div>
-
-              
-                 
-              <Link
+                </p>
+                <div className="-mt-[13px] ">
+                   <Link
                 href={`/farm/${item.id}`}
                 className="flex gap-2 mt-3 text-green-600 font-semibold"
               >
-                View farms <FaArrowRight className="mt-[2px]" />
+                View farms <FaArrowRight className="mt-[5px]" />
               </Link>
+                </div>
+              </div>
+ 
+              
+                 
+             
             </div>
           );
         })}
