@@ -12,7 +12,7 @@ const config: Config = {
         padding: {
           DEFAULT: "16px",
           sm: "20px",
-          md: "40px",
+          md: "2px",
           lg: "60px",
           xl: "80px",
         },

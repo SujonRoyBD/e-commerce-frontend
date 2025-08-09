@@ -67,7 +67,7 @@ const Features = () => {
         {data.map((item) => {
 
           return (
-            <div key={item.id} className="border border-black p-4 rounded shadow-sm">
+            <div key={item.id} className=" p-4 rounded shadow-sm">
               <div className="relative">
                 <div className="bg-white p-2 rounded-full absolute right-2 top-2">
                   <FaRegComment />
