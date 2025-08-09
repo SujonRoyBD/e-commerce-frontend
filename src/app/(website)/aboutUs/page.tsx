@@ -42,7 +42,7 @@ const AboutUs = () => {
               With over 60 million gardens in America, peoples are growing fresh vegetables for months of the year with no way to market them. Initially we wanted to offer an alternative way to sell or trade your excess produce, making extra income for the average gardener. 
             </p>
             <p className="py-[24px]">
-             But its more than that! Your familys health is important, and being able to buy the freshest and healthiest food is the goal of every person. 
+             But its more than that! Your family health is important, and being able to buy the freshest and healthiest food is the goal of every person. 
             </p>
           </div>
         </div>
