@@ -81,7 +81,7 @@ const Features2 = () => {
       imglogo: "/assets/head.png",
       title: "Green Valley Farm",
       location: "Sacramento, CA 95814",
-      desc: "Family-owned organic farm specializing in seasonal vegetables and herbs.",
+      desc: "Family-owned organic farm specializing seasonal vegetables and herbs.",
     },
     
   ];
