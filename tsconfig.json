@@ -12,9 +12,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",                         // ✅ added correctly
     "paths": {
-      "@/*": ["src/*"]                      // ✅ added correctly
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -26,8 +25,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/types/app/(website)/data/page.tsx"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

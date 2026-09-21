@@ -2,131 +2,116 @@ import HeroSection from "@/components/common/HeroSection";
 import Image from "next/image";
 import React from "react";
 import WhatCustomers from "../what_ourCustomers/page";
+import { Dna, ShieldAlert, Sprout, Globe, Compass, Users } from "lucide-react";
 
 const OurMission = () => {
   return (
-    <div className="">
+    <div className="space-y-12 md:space-y-20 pb-12">
       <HeroSection
         heading="Our Mission"
-        paragraph="lorem ipsum is a dummy of placeholder text commutnity used in graphic design publishigng and web Development"
+        paragraph="Taking control back from corporate monopolies and placing clean nutrition into the hands of communities."
         image="/assets/aboutUs.png"
       />
 
-      <div className="container flex justify-center items-center text-center py-7">
-        <div>
-          <p className="text-green-500">Mission Table Fresh</p>
-          <p className="text-black font-bold text-2xl">
-            Connecting People Through Food, Building Community Through Tradition
-          </p>
-          <p>
-            Taking control from corporations and putting it back in the hands of
-            the people, where it belongs.
-          </p>
+      {/* Mission Banner */}
+      <section className="container mx-auto px-4 sm:px-6 text-center max-w-3xl">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold mb-3">
+          <Sprout className="w-3.5 h-3.5" /> Table Fresh Principles
         </div>
-      </div>
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-9">
-        <div className="w-full md:w-2/8 order-1 md:order-2">
-          <Image
-            src="/assets/about/aboutUs1.png"
-            alt="logo"
-            width={500}
-            height={800}
-          />
-        </div>
-        <div className="w-full  md:w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
-          <div>
-            <p className="font-bold text-2xl py-[24px]">
-              A Journey Through Time
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          Connecting People Through Food, Building Community Through Tradition
+        </h2>
+        <p className="text-base sm:text-lg text-gray-600 mt-3 leading-relaxed">
+          We envision a transparent, regenerative food system where families eat real, nutrient-rich produce and local food growers prosper with dignity.
+        </p>
+      </section>
+
+      {/* Historical Journey Section */}
+      <section className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-600">
+              <Compass className="w-4 h-4" /> A Journey Through Time
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+              From the Ancient Silk Road to Modern Monopolies
+            </h3>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              For millennia, food has transformed cultures and sparked human cooperation. Ancient trade networks carried indigenous seeds, heirloom spices, and honest harvest across continents without destroying natural soil cycles.
             </p>
-           <div className="bg-white w-full md:w-[628px] h-[80px]">
-             <p>
-              For millennia, food has changed and transformed cultures and
-              societies. Ships sailed around the world seeking routes to the Far
-              East in search of spices.
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              Today, food is flown around the world in plastic wrapping. Every mega-store features identical-looking produce treated with preserving chemicals, where seasonality no longer applies. But at what cost to health and flavor?
             </p>
-           </div> 
-            <p className="py-[24px]">
-              The Silk Road, the world first global trade route, carried food,
-              spices, gold and goods from the Far East to the Middle East and
-              European continent.
-            </p>
-            <p>
-              Today food is flown around the world in a matter of hours. Every
-              grocery store has amazing selection with seasonality no longer
-              applying. “But, at what cost”.
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              Table Fresh brings back seasonal, real-time harvesting where produce is picked ripe and enjoyed fresh.
             </p>
           </div>
-        </div>
-      </div>
-      <div className="container  grid grid-cols-1 md:grid-cols-2 py-8 gap-7">
-        <div className="w-full md:w-2/8 ">
-          <Image
-            src="/assets/about/aboutUs2.png"
-            alt="logo"
-            width={500}
-            height={800}
-          />
-        </div>
-        <div className="w-full md:w-2/8 justify-center items-center mx-auto ">
-          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3 ">
-            <p className="font-bold text-2xl">
-             Genetic Modification
-            </p>
-            <p>
-              Altering the natural structure of our food for profit over health.
-            </p>
-          </div>
-          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3 mt-3 ">
-            <p className="font-bold text-2xl">
-             Genetic Modification
-            </p>
-            <p>
-              Altering the natural structure of our food for profit over health.
-            </p>
-          </div>
-          <div className="bg-white rounded-[8px] border-l-[4px] border-[#039B06] p-3 mt-3">
-            <p className="font-bold text-2xl">
-             Genetic Modification
-            </p>
-            <p>
-              Altering the natural structure of our food for profit over health.
-            </p>
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+            <Image
+              src="/assets/about/aboutUs1.png"
+              alt="Food journey"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
-      </div>
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-9">
-        <div className="w-full md:w-2/8 order-1 md:order-2">
-          <Image
-            src="/assets/about/aboutUs3.png"
-            alt="logo"
-            width={500}
-            height={800}
-          />
-        </div>
-        <div className="w-full md:w-2/8 order-2 md:order-1 flex justify-center items-center mx-auto ">
-          <div>
-            <p className="font-bold text-2xl py-[24px]">Table Fresh Mission</p>
-            <p>
-              Our mission is to connect people through food, fresh grown
-              vegetables , building community with a healthy fresh alternative
-              to grocery stores.
+      </section>
+
+      {/* The 3 Core Pillars */}
+      <section className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+            <Image
+              src="/assets/about/aboutUs2.png"
+              alt="Organic crops"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+              Why We Stand Against Industrial Agribusiness
+            </h3>
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+              Our food should heal our bodies, not enrich pesticide manufacturers. We advocate for three core standards:
             </p>
-            <p className="py-[24px]">
-              We re not stopping there, we want to include everyone. From small
-              farms to organic farms and food makers, such as flour, cheese and
-              smoked meats. Preserves, like jellies and jams and canned goods
-              from home processors. Home bakers with artisan breads and baked
-              goods. Cooks and caterers
-            </p>
-            <p>
-              Let Table Fresh serve as the platform to launch you own small food
-              business, local and healthy. Taking control from the government
-              and corporations and putting it back in the hands of the people,
-              where it belongs!
-            </p>
+
+            <div className="space-y-3 pt-2">
+              <div className="bg-white rounded-xl border border-gray-150 border-l-4 border-l-emerald-600 p-4 shadow-sm">
+                <div className="flex items-center gap-2 mb-1">
+                  <Dna className="w-5 h-5 text-emerald-600" />
+                  <h4 className="font-bold text-gray-900 text-base">Non-GMO Seed Integrity</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Protecting heirloom seeds and natural plant varieties from corporate genetic patents.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-150 border-l-4 border-l-emerald-600 p-4 shadow-sm">
+                <div className="flex items-center gap-2 mb-1">
+                  <ShieldAlert className="w-5 h-5 text-emerald-600" />
+                  <h4 className="font-bold text-gray-900 text-base">Zero Synthetic Chemical Sprays</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Promoting regenerative composting and natural pest control over harmful glyphosates.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-150 border-l-4 border-l-emerald-600 p-4 shadow-sm">
+                <div className="flex items-center gap-2 mb-1">
+                  <Users className="w-5 h-5 text-emerald-600" />
+                  <h4 className="font-bold text-gray-900 text-base">Decentralized Neighborhood Markets</h4>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Direct peer-to-peer selling where independent farmers keep 95% of retail revenue.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Community Testimonials */}
       <WhatCustomers />
     </div>
   );
