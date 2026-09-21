@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WhatCustomers from "../../what_ourCustomers/page";
 import { BlogData } from "@/components/data/page";
-import { ArrowLeft, Calendar, Clock, Share2, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BlogDetailsPage = () => {

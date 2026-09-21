@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
-import { ShieldCheck, Calendar, Phone, Mail, CheckCircle2, Sprout } from "lucide-react";
+import { ShieldCheck, Calendar, CheckCircle2 } from "lucide-react";
 import FarmProducts from "../../farmProduct2/page";
 import { Button } from "@/components/ui/button";
 

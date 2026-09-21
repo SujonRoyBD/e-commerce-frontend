@@ -2,7 +2,7 @@ import HeroSection from "@/components/common/HeroSection";
 import Image from "next/image";
 import React from "react";
 import WhatCustomers from "../what_ourCustomers/page";
-import { Dna, ShieldAlert, Sprout, Globe, Compass, Users } from "lucide-react";
+import { Dna, ShieldAlert, Sprout, Compass, Users } from "lucide-react";
 
 const OurMission = () => {
   return (

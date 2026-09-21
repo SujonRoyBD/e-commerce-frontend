@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import HeroSection from "@/components/common/HeroSection";
-import { DollarSign, Truck, Users, CheckCircle2, Store, Sprout, ArrowRight } from "lucide-react";
+import { DollarSign, Truck, CheckCircle2, Store, Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

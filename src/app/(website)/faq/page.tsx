@@ -2,7 +2,7 @@ import React from "react";
 import AccordionDemo from "../according/page";
 import WhatCustomers from "../what_ourCustomers/page";
 import Link from "next/link";
-import { HelpCircle, Mail, MessageCircle } from "lucide-react";
+import { HelpCircle, Mail } from "lucide-react";
 
 const Faq = () => {
   return (
